@@ -58,3 +58,11 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
+# Pontos importantes do `signal` no Angular seja em um `component`ou `service`.
+* __Material de apoio Prof. Dantas IFPB:__ [Aula Prof. Dantas](https://github.com/franciscodnn/pweb1-2025-2/blob/main/classes/7_angular_fundamentals/README.md)
+* __Site oficial:__ [Angular](http://angular.dev)
+* Usar o `signal` sempre que um valor armazenado é dinámico, se estático usar um `component`
+* Para acessar um signal usar `nome-signal()`
+* Para modificar o valor de um signal usar `nome-signal().set() ou nome-signal().update()`
+* Usar `computed()` também indica que é um `signal`
+* Usar um `signal` seja no `component` ou `service`, Sempre que o atributo for dinámico

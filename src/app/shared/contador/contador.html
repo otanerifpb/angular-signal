@@ -2,5 +2,11 @@
 
 <!-- Acessar o signal no template -->
 <h1>Contador: {{ contador() }}</h1>
-<button (click)="incrementar()">Incrementar</button>
-<button (click)="decrementar()">Decrementar</button>
+<button (click)="incrementar()">Incrementar +1</button>
+<button (click)="decrementar()">Decrementar -1</button>
+
+<h1>Iniciar com 10:</h1>
+<button (click)="setContador()">Start = 10</button>
+
+<h1>Dobrar o Valor:</h1>
+<button (click)="updateContador()">Dobrar o Valor</button>
