@@ -1,1 +1,9 @@
-<p>temperatura works!</p>
+<h2>Conversor de temperatura:</h2>
+<div>
+  <label>Celsius: </label>
+  <input type="number" [ngModel]="celsius()" (ngModelChange)="celsius.set($event)"> °C
+</div>
+<div>
+  <label>Fahrenheit: {{ fahrenheit() }}</label> °F
+  <!-- <p>{{ fahrenheit() }}</p> -->
+</div>

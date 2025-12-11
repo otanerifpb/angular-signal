@@ -33,9 +33,6 @@ export class Contador {
     const usuarioSinal = signal({ nome: 'João', idade: 30 });
     //usuarioSinal.mutate(usuario => {usuario.idade = 31; }); //--Não esta aceitando o "mutate"
   }
-
-
-
 }
 
 
