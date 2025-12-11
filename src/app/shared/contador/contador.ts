@@ -1,14 +1,16 @@
 import { Component, signal } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-contador',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './contador.html',
   // styleUrl: './contador.css',
 })
 
 export class Contador {
   contador = signal(0); //--sinaliza que "contador" é um sinal e iniciou com "0"
+  novoValor = signal(0);
 
   incrementar() {
     this.contador.update(valor => valor + 1); //--Soma +1 ao valor anterior
@@ -32,6 +34,12 @@ export class Contador {
   mutateContador(){
     const usuarioSinal = signal({ nome: 'João', idade: 30 });
     //usuarioSinal.mutate(usuario => {usuario.idade = 31; }); //--Não esta aceitando o "mutate"
+  }
+
+  startValor() {
+    const startValor = this.novoValor();
+    //this.contador.update(this.startValor());
+    this.contador.set(startValor);
   }
 }
 

@@ -2,11 +2,22 @@
 
 <!-- Acessar o signal no template -->
 <h1>Contador: {{ contador() }}</h1>
+<!-- <label>Contador: {{ contador() }} </label> -->
 <button (click)="incrementar()">Incrementar +1</button>
 <button (click)="decrementar()">Decrementar -1</button>
 
-<h1>Iniciar com 10:</h1>
+<h1>Definir Valor para Iniciar:</h1>
+<!-- <label>Definir Valor para Iniciar: </label> -->
 <button (click)="setContador()">Start = 10</button>
+<div>
+  <input
+    type="number"
+    [ngModel]="novoValor()"
+    (ngModelChange)="novoValor.set($event)"
+  >
+  <button (click)="startValor()">Start Novo Valor</button>
+</div>
+
 
 <h1>Dobrar o Valor:</h1>
 <button (click)="updateContador()">Dobrar o Valor</button>
