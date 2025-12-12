@@ -5,19 +5,34 @@
 <!-- <label>Contador: {{ contador() }} </label> -->
 <button (click)="incrementar()">Incrementar +1</button>
 <button (click)="decrementar()">Decrementar -1</button>
+<button (click) = "zerarContador()">Zerar Contador</button>
 
 <h1>Definir Valor para Iniciar:</h1>
 <!-- <label>Definir Valor para Iniciar: </label> -->
 <button (click)="setContador()">Start = 10</button>
 <div>
+  <!-- type: Indica o tipo de entrada de dados -->
+  <!-- ngModel: Pega o valor que foi digitado -->
+  <!-- ngModelChange: Monitora e avisa quando o valor é alterado -->
+  <!-- xxx.set($event): Atualiza o valor anterior pelo novo informado -->
   <input
     type="number"
     [ngModel]="novoValor()"
     (ngModelChange)="novoValor.set($event)"
   >
-  <button (click)="startValor()">Start Novo Valor</button>
+  <!-- Chamar uma função que vai atualizar o valor Contador -->
+  <button (click)="startValor()">Novo Valor</button>
+  <button (click) = "limparStart()">Limpar Caixa</button>
 </div>
-
 
 <h1>Dobrar o Valor:</h1>
 <button (click)="updateContador()">Dobrar o Valor</button>
+
+<h1>Testar input</h1>
+<!-- input: Entrada de qualquer valor quando não tem "type" -->
+<!-- limparInput(): Chama o método que vai limpar a caixa -->
+<div>
+  <input [ngModel]="caixaEntrada()" (ngModelChange)="caixaEntrada.set($event)">
+  <button (click) = "limparInput()">Limpar Caixa</button>
+</div>
+

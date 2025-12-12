@@ -9,8 +9,9 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class Contador {
-  contador = signal(0); //--sinaliza que "contador" é um sinal e iniciou com "0"
-  novoValor = signal(0);
+  contador = signal(0); //--------Sinaliza que "contador" é um sinal e iniciou com "0"
+  novoValor = signal(0); //-------Constante sinal para atualizar o contador, com valor de entreda por um user
+  caixaEntrada = signal(' '); //--Entreda dados com caixa valizia
 
   incrementar() {
     this.contador.update(valor => valor + 1); //--Soma +1 ao valor anterior
@@ -37,9 +38,22 @@ export class Contador {
   }
 
   startValor() {
-    const startValor = this.novoValor();
+    const startValor = this.novoValor(); //--Pegar o valor informado no template
     //this.contador.update(this.startValor());
-    this.contador.set(startValor);
+    this.contador.set(startValor); //--------Pega o valor do template e atualiza o contador
+  }
+
+  zerarContador() {
+    this.contador.set(0);
+  }
+
+  limparStart() {
+    //this.novoValor.set(' '); //--Não é permitido porque o 'type é number'
+    this.novoValor.set(0); //------Como o 'type é number' precisa voltar para zero
+  }
+
+  limparInput() {
+    this.caixaEntrada.set(' '); //--Limpar a caixa de entrada de dados
   }
 }
 
